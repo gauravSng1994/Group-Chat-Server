@@ -1,20 +1,19 @@
 import express from "express";
 import chalk from 'chalk';
+import bodyParser from "body-parser";
 // import mongoose from "mongoose";
 import _db from './db';
 const app = express();
 import router from './controller';
+
+/** body parser */
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+
+/** setting routing */
 router(app);
-// app.get('/api',(req, res) => {
-//     return res.json({success:true,message:"This is gateway for making api calls"});
-// });
 
-// app.get('/api/users',(req, res) => {
-//   console.log('query',req.query);
-//   console.log('params',(req.params));
-//   return res.json({success:true});
-// });
-
+/** Setting variables in global object */
 Object.defineProperty(global,'_db',{
     value:_db,
     writable:false

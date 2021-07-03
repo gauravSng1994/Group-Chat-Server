@@ -11,8 +11,11 @@
   "author": "Gaurav Kumar",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chalk": "^4.1.1",
     "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.13.1"
   },
   "devDependencies": {

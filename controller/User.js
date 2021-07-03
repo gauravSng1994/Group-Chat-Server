@@ -1,8 +1,9 @@
 import express from "express";
 const router = express.Router();
 
-import {getUserById} from '../api/User';
+import {createUser, getUserById} from '../api/User';
 
 router.get('/:id',getUserById);
+router.post('/',createUser);
 
 export default router;
